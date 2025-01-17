@@ -3,16 +3,18 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // Tu peux ajouter des événements ou des plugins ici si nécessaire
+      // Ajouter des événements ou des plugins si nécessaire
     },
-    reporter: 'mochawesome', // Utilisation de Mochawesome comme reporter
+    reporter: "mochawesome",
     reporterOptions: {
-      reportDir: 'cypress/reports', // Dossier où seront sauvegardés les rapports
-      overwrite: true,             // Écraser les anciens rapports à chaque exécution
-      html: true,                  // Générer un rapport HTML
-      json: true                   // Générer un fichier JSON pour la fusion des rapports
+      reportDir: "cypress/reports",  // Répertoire de destination des rapports
+      reportFilename: "mochawesome", // Nom du fichier du rapport
+      overwrite: false,
+      html: true,   // Générer le rapport HTML
+      json: true,   // Générer le rapport JSON
     },
-    video: true, // Enregistrer une vidéo des tests
-    screenshotOnRunFailure: true, // Prendre des captures d'écran en cas d'échec des tests
+    video: true,  // Enregistrer une vidéo des tests
+    screenshotOnRunFailure
+    : true, // Prendre des captures d'écran en cas d'échec
   },
 });
